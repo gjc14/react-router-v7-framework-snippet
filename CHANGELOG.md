@@ -4,6 +4,6 @@ All notable changes to the "react-router-v7-framework-snippet" extension will be
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-## [Unreleased]
+## [0.1.0]
 
 - Initial release
