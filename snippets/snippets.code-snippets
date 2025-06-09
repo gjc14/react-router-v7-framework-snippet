@@ -35,7 +35,7 @@
 			"\treturn (",
 			"\t\t<div>",
 			"\t\t\t{/* Frontend Code here. */}",
-			"\t\t\t<div></div>",
+			"\t\t\t<h1>New Route</h1>",
 			"\t\t</div>",
 			"\t)",
 			"}"
