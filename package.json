@@ -2,7 +2,7 @@
   "name": "react-router-v7-framework-snippet",
   "displayName": "React Router v7 Framework / Remix v3 Snippets",
   "description": "Useful React Router v7 loader / action / component snippets",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "engines": {
     "vscode": "^1.100.0"
   },
