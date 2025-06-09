@@ -1,0 +1,20 @@
+{
+  "name": "react-router-v7-framework-snippet",
+  "displayName": "react-router-v7-framework-snippet",
+  "description": "rrv7 snippet for loader / action / components",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "contributes": {
+    "snippets": [
+      {
+        "language": "typescript",
+        "path": "./snippets/snippets.code-snippets"
+      }
+    ]
+  }
+}
