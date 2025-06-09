@@ -9,6 +9,7 @@
   "categories": [
     "Snippets"
   ],
+  "icon": "assets/rr_logo_dark.png",
   "contributes": {
     "snippets": [
       {
