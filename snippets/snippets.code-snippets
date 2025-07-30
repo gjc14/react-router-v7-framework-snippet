@@ -1,106 +1,316 @@
 {
-	"React Router Resource Route": {
-		"prefix": "rrrr",
-		"body": [
-			"import type { Route } from './+types/route'",
-			"",
-			"export const action = async ({ request, params }: Route.ActionArgs) => {",
-			"\treturn {}",
-			"}",
-			"",
-			"export const loader = async ({ request, params }: Route.LoaderArgs) => {",
-			"\treturn {}",
-			"}",
-		],
-		"description": "React Router resource route with action and loader"
-	},
-	"React Router UI Route": {
-		"prefix": "rrur",
-		"body": [
-			"import type { Route } from './+types/route'",
-			"",
-			"export const action = async ({ request, params }: Route.ActionArgs) => {",
-			"\treturn {}",
-			"}",
-			"",
-			"export const loader = async ({ request, params }: Route.LoaderArgs) => {",
-			"\treturn {}",
-			"}",
-			"",
-			"export default function ${1:Component}({",
-			"\tloaderData,",
-			"\tactionData,",
-			"}: Route.ComponentProps) {",
-			"\t$2",
-			"\treturn (",
-			"\t\t<div>",
-			"\t\t\t{/* Frontend Code here. */}",
-			"\t\t\t<h1>New Route</h1>",
-			"\t\t</div>",
-			"\t)",
-			"}"
-		],
-		"description": "React Router component route with loader, action, and component"
-	},
-	"React Router Loader": {
-		"prefix": "rrl",
-		"body": [
-			"export const loader = async ({ request, params }: Route.LoaderArgs) => {",
-			"\treturn {}",
-			"}"
-		],
-		"description": "React Router loader function"
-	},
-	"React Router Action": {
-		"prefix": "rra",
-		"body": [
-			"export const action = async ({ request, params }: Route.ActionArgs) => {",
-			"\treturn {}",
-			"}"
-		],
-		"description": "React Router action function"
-	},
-	"React Router Client Loader": {
-		"prefix": "rrcl",
-		"body": [
-			"export const clientLoader = async ({",
-			"\trequest,",
-			"\tparams,",
-			"\tserverLoader,",
-			"}: Route.ClientLoaderArgs) => {",
-			"\treturn {}",
-			"}"
-		],
-		"description": "React Router client loader function"
-	},
-	"React Router Client Action": {
-		"prefix": "rrca",
-		"body": [
-			"export const clientAction = async ({",
-			"\trequest,",
-			"\tparams,",
-			"\tserverAction,",
-			"}: Route.ClientActionArgs) => {",
-			"\treturn {}",
-			"}"
-		],
-		"description": "React Router client action function"
-	},
-	"React Router Component": {
-		"prefix": "rrcomp",
-		"body": [
-			"export default function ${1:Component}({",
-			"\tloaderData,",
-			"\tactionData,",
-			"}: Route.ComponentProps) {",
-			"\treturn (",
-			"\t\t<div>",
-			"\t\t\t{/* Frontend Code here. */}",
-			"\t\t\t<h1>New Route</h1>",
-			"\t\t</div>",
-			"\t)",
-			"}"
-		],
-		"description": "React Router default component with cursor on component name"
-	}
+  "React Router Resource Route": {
+    "prefix": "rrrr",
+    "body": [
+      "import type { Route } from \"../+types/root\";",
+      "",
+      "export async function action({ request, params }: Route.ActionArgs) {",
+      "\tconst formData = await request.formData();",
+      "\t$1",
+      "\treturn { success: true };",
+      "}",
+      "",
+      "export async function loader({ request, params }: Route.LoaderArgs) {",
+      "\t$2",
+      "\treturn {};",
+      "}"
+    ],
+    "description": "React Router v7 resource route with action and loader"
+  },
+  "React Router UI Route": {
+    "prefix": "rrur",
+    "body": [
+      "import type { Route } from \"../+types/root\";",
+      "",
+      "export async function action({ request, params }: Route.ActionArgs) {",
+      "\tconst formData = await request.formData();",
+      "\t$1",
+      "\treturn { success: true };",
+      "}",
+      "",
+      "export async function loader({ request, params }: Route.LoaderArgs) {",
+      "\t$2",
+      "\treturn {};",
+      "}",
+      "",
+      "export default function ${3:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}}({",
+      "\tloaderData,",
+      "\tactionData,",
+      "\tparams,",
+      "}: Route.ComponentProps) {",
+      "\t$4",
+      "\treturn (",
+      "\t\t<div>",
+      "\t\t\t<h1>${5:New Route}</h1>",
+      "\t\t\t{/* Add your UI here */}",
+      "\t\t</div>",
+      "\t);",
+      "}"
+    ],
+    "description": "React Router v7 component route with loader, action, and component"
+  },
+  "React Router Server Loader": {
+    "prefix": "rrl",
+    "body": [
+      "export async function loader({ request, params }: Route.LoaderArgs) {",
+      "\t$1",
+      "\treturn {};",
+      "}"
+    ],
+    "description": "React Router v7 server loader function"
+  },
+  "React Router Server Action": {
+    "prefix": "rra",
+    "body": [
+      "export async function action({ request, params }: Route.ActionArgs) {",
+      "\tconst formData = await request.formData();",
+      "\t$1",
+      "\treturn { success: true };",
+      "}"
+    ],
+    "description": "React Router v7 server action function"
+  },
+  "React Router Client Loader": {
+    "prefix": "rrcl",
+    "body": [
+      "export async function clientLoader({",
+      "\trequest,",
+      "\tparams,",
+      "\tserverLoader,",
+      "}: Route.ClientLoaderArgs) {",
+      "\t// Optional: call server loader",
+      "\t// const serverData = await serverLoader();",
+      "\t$1",
+      "\treturn {};",
+      "}",
+      "",
+      "// Optional: Force client loader to run during hydration",
+      "// clientLoader.hydrate = true as const;"
+    ],
+    "description": "React Router v7 client loader function"
+  },
+  "React Router Client Action": {
+    "prefix": "rrca",
+    "body": [
+      "export async function clientAction({",
+      "\trequest,",
+      "\tparams,",
+      "\tserverAction,",
+      "}: Route.ClientActionArgs) {",
+      "\tconst formData = await request.formData();",
+      "\t// Optional: call server action",
+      "\t// const serverResult = await serverAction();",
+      "\t$1",
+      "\treturn { success: true };",
+      "}"
+    ],
+    "description": "React Router v7 client action function"
+  },
+  "React Router Component": {
+    "prefix": "rrcomp",
+    "body": [
+      "export default function ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}}({",
+      "\tloaderData,",
+      "\tactionData,",
+      "\tparams,",
+      "\tmatches,",
+      "}: Route.ComponentProps) {",
+      "\t$2",
+      "\treturn (",
+      "\t\t<div>",
+      "\t\t\t<h1>${3:New Route}</h1>",
+      "\t\t\t{/* Add your UI here */}",
+      "\t\t</div>",
+      "\t);",
+      "}"
+    ],
+    "description": "React Router v7 component with typed props"
+  },
+  "React Router Error Boundary": {
+    "prefix": "rreb",
+    "body": [
+      "import { isRouteErrorResponse, useRouteError } from \"react-router\";",
+      "",
+      "export function ErrorBoundary() {",
+      "\tconst error = useRouteError();",
+      "",
+      "\tif (isRouteErrorResponse(error)) {",
+      "\t\treturn (",
+      "\t\t\t<div>",
+      "\t\t\t\t<h1>",
+      "\t\t\t\t\t{error.status} {error.statusText}",
+      "\t\t\t\t</h1>",
+      "\t\t\t\t<p>{error.data}</p>",
+      "\t\t\t</div>",
+      "\t\t);",
+      "\t} else if (error instanceof Error) {",
+      "\t\treturn (",
+      "\t\t\t<div>",
+      "\t\t\t\t<h1>Error</h1>",
+      "\t\t\t\t<p>{error.message}</p>",
+      "\t\t\t\t<pre>{error.stack}</pre>",
+      "\t\t\t</div>",
+      "\t\t);",
+      "\t} else {",
+      "\t\treturn <h1>Unknown Error</h1>;",
+      "\t}",
+      "}"
+    ],
+    "description": "React Router v7 error boundary component"
+  },
+  "React Router Hydrate Fallback": {
+    "prefix": "rrhf",
+    "body": [
+      "export function HydrateFallback() {",
+      "\treturn (",
+      "\t\t<div>",
+      "\t\t\t<p>${1:Loading...}</p>",
+      "\t\t</div>",
+      "\t);",
+      "}"
+    ],
+    "description": "React Router v7 hydrate fallback component"
+  },
+  "React Router Meta": {
+    "prefix": "rrmeta",
+    "body": [
+      "export function meta() {",
+      "\treturn [",
+      "\t\t{ title: \"${1:Page Title}\" },",
+      "\t\t{",
+      "\t\t\tname: \"description\",",
+      "\t\t\tcontent: \"${2:Page description}\",",
+      "\t\t},",
+      "\t\t{",
+      "\t\t\tproperty: \"og:title\",",
+      "\t\t\tcontent: \"${3:Open Graph title}\",",
+      "\t\t},",
+      "\t];",
+      "}"
+    ],
+    "description": "React Router v7 meta function for SEO"
+  },
+  "React Router Links": {
+    "prefix": "rrlinks",
+    "body": [
+      "export function links() {",
+      "\treturn [",
+      "\t\t{",
+      "\t\t\trel: \"stylesheet\",",
+      "\t\t\thref: \"${1:./styles.css}\",",
+      "\t\t},",
+      "\t\t{",
+      "\t\t\trel: \"icon\",",
+      "\t\t\thref: \"${2:/favicon.ico}\",",
+      "\t\t\ttype: \"image/x-icon\",",
+      "\t\t},",
+      "\t];",
+      "}"
+    ],
+    "description": "React Router v7 links function for head links"
+  },
+  "React Router Headers": {
+    "prefix": "rrheaders",
+    "body": [
+      "export function headers() {",
+      "\treturn {",
+      "\t\t\"Cache-Control\": \"${1:max-age=300, s-maxage=3600}\",",
+      "\t\t$2",
+      "\t};",
+      "}"
+    ],
+    "description": "React Router v7 headers function for HTTP headers"
+  },
+  "React Router Should Revalidate": {
+    "prefix": "rrshouldrevalidate",
+    "body": [
+      "import type { ShouldRevalidateFunctionArgs } from \"react-router\";",
+      "",
+      "export function shouldRevalidate({",
+      "\tactionResult,",
+      "\tcurrentParams,",
+      "\tcurrentUrl,",
+      "\tdefaultShouldRevalidate,",
+      "\tformAction,",
+      "\tformData,",
+      "\tformEncType,",
+      "\tformMethod,",
+      "\tnextParams,",
+      "\tnextUrl,",
+      "}: ShouldRevalidateFunctionArgs) {",
+      "\t$1",
+      "\treturn defaultShouldRevalidate;",
+      "}"
+    ],
+    "description": "React Router v7 shouldRevalidate function for controlling revalidation"
+  },
+  "React Router Full Route Module": {
+    "prefix": "rrfull",
+    "body": [
+      "import type { Route } from \"../+types/root\";",
+      "import { isRouteErrorResponse, useRouteError } from \"react-router\";",
+      "",
+      "// Meta tags for SEO",
+      "export function meta() {",
+      "\treturn [",
+      "\t\t{ title: \"${1:Page Title}\" },",
+      "\t\t{ name: \"description\", content: \"${2:Page description}\" },",
+      "\t];",
+      "}",
+      "",
+      "// Server-side data loading",
+      "export async function loader({ request, params }: Route.LoaderArgs) {",
+      "\t$3",
+      "\treturn {};",
+      "}",
+      "",
+      "// Server-side data mutations",
+      "export async function action({ request, params }: Route.ActionArgs) {",
+      "\tconst formData = await request.formData();",
+      "\t$4",
+      "\treturn { success: true };",
+      "}",
+      "",
+      "// Main route component",
+      "export default function ${5:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}}({",
+      "\tloaderData,",
+      "\tactionData,",
+      "\tparams,",
+      "}: Route.ComponentProps) {",
+      "\t$6",
+      "\treturn (",
+      "\t\t<div>",
+      "\t\t\t<h1>${7:New Route}</h1>",
+      "\t\t\t{/* Add your UI here */}",
+      "\t\t</div>",
+      "\t);",
+      "}",
+      "",
+      "// Error boundary",
+      "export function ErrorBoundary() {",
+      "\tconst error = useRouteError();",
+      "",
+      "\tif (isRouteErrorResponse(error)) {",
+      "\t\treturn (",
+      "\t\t\t<div>",
+      "\t\t\t\t<h1>{error.status} {error.statusText}</h1>",
+      "\t\t\t\t<p>{error.data}</p>",
+      "\t\t\t</div>",
+      "\t\t);",
+      "\t}",
+      "",
+      "\tif (error instanceof Error) {",
+      "\t\treturn (",
+      "\t\t\t<div>",
+      "\t\t\t\t<h1>Error</h1>",
+      "\t\t\t\t<p>{error.message}</p>",
+      "\t\t\t</div>",
+      "\t\t);",
+      "\t}",
+      "",
+      "\treturn <h1>Unknown Error</h1>;",
+      "}"
+    ],
+    "description": "React Router v7 complete route module with all features"
+  }
 }
