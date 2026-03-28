@@ -1,8 +1,8 @@
 {
   "name": "react-router-v7-framework-snippet",
-  "displayName": "React Router v7 Framework / Remix v3 Snippets",
-  "description": "Useful React Router v7 loader / action / component snippets",
-  "version": "0.1.1",
+  "displayName": "React Router v7 Framework Snippets",
+  "description": "Complete React Router v7 Route Modules snippets to supercharge your React Router v7 DX.",
+  "version": "2.0.0",
   "engines": {
     "vscode": "^1.100.0"
   },
@@ -12,11 +12,11 @@
   "keywords": [
     "React Router",
     "v7",
-    "Remix",
     "React",
     "Typescript",
     "snippet",
-    "snippets"
+    "snippets",
+    "Remix"
   ],
   "license": "MIT",
   "publisher": "gjc14",

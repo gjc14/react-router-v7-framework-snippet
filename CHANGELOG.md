@@ -13,3 +13,10 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ### Changed
 
 - UI Router render
+
+## [2.0.0]
+
+### Changed
+
+- Snippets added: rrcompprops, rrmw, rrcmw, rreb, rrhf, rrheaders, rrhandle, rrlinks, rrmetatag, rrmeta, rrshouldrevalidate, rrfull
+- Examples using official docs: [https://reactrouter.com/start/framework/route-module](https://reactrouter.com/start/framework/route-module)
