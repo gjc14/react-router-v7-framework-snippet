@@ -4,7 +4,11 @@ This comprehensive snippet collection includes all [Route Modules](https://react
 
 ## Features
 
-![snippet preview](assets/demo.gif)
+![snippet preview](assets/snippet.jpg)
+**^ Snippets**
+
+![result preview](assets/result.jpg)
+**^ Code Result**
 
 ---
 
