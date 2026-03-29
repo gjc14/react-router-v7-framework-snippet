@@ -2,7 +2,7 @@
   "name": "react-router-v7-framework-snippet",
   "displayName": "React Router v7 Framework Snippets",
   "description": "Complete React Router v7 Route Modules snippets to supercharge your React Router v7 DX.",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "engines": {
     "vscode": "^1.100.0"
   },
